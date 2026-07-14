@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#0A1628" name="theme-color"/>
+<title>Case Study — AADEK Consulting | BluWav Growth</title>
+<meta content="How BluWav Growth transformed AADEK Consulting's digital presence — from a placeholder website to a high-powered engineering consultancy platform." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Sora:wght@700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#0A1628;color:#E8EDF5;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+:root{
+  --navy:#0A1628;--navy2:#0D1E35;--navy3:#112240;
+  --steel:#1E3A5F;--gold:#C9A84C;--gold2:#E8C97A;
+  --cyan:#4FC3D4;--coral:#FF5500;--green:#22c55e;
+  --slate:#8899AA;--light:#E8EDF5;--muted:rgba(232,237,245,0.55);
+  --border:rgba(255,255,255,0.08);--max:1100px;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,40,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#0A1628;font-family:'Sora',sans-serif;}
+.nav-logo-name{font-family:'Sora',sans-serif;font-size:16px;font-weight:800;color:var(--light);letter-spacing:1px;}
+.nav-back{font-size:13px;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:6px;transition:color 0.2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:#0A1628;font-size:13px;font-weight:800;padding:9px 22px;border-radius:6px;transition:all 0.2s;}
+.nav-cta:hover{background:var(--gold2);}
+@media(max-width:768px){nav{padding:0 20px!important;}.nav-back span{display:none;}}
+
+/* LAYOUT */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 48px;}
+@media(max-width:768px){.wrap{padding:0 20px!important;}}
+
+/* HERO */
+.cs-hero{background:linear-gradient(160deg,#060E1C 0%,#0A1628 50%,#0D1E35 100%);padding:120px 48px 80px;position:relative;overflow:hidden;}
+.cs-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none;}
+.cs-hero-inner{max-width:var(--max);margin:0 auto;position:relative;z-index:1;}
+.eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:4px;color:var(--gold);display:block;margin-bottom:14px;}
+.cs-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:4px;padding:5px 12px;font-size:11px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;}
+.cs-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:800;color:var(--light);line-height:1.1;letter-spacing:-0.5px;margin-bottom:20px;}
+.cs-title span{color:var(--gold);}
+.cs-sub{font-size:17px;color:var(--muted);line-height:1.8;max-width:640px;margin-bottom:40px;}
+.cs-meta{display:flex;gap:32px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--border);}
+.cs-meta-item{display:flex;flex-direction:column;gap:4px;}
+.cs-meta-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--slate);}
+.cs-meta-value{font-size:14px;font-weight:700;color:var(--light);}
+
+/* RESULTS BAR */
+.results-bar{background:linear-gradient(135deg,var(--steel),var(--navy3));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+.result-num{font-family:'Sora',sans-serif;font-size:42px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px;}
+.result-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}}
+
+/* BEFORE/AFTER */
+.ba-section{padding:80px 0;background:var(--navy2);}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+.ba-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);}
+.ba-card-header{padding:20px 24px;display:flex;align-items:center;gap:12px;}
+.ba-card-header.before{background:rgba(255,85,0,0.1);border-bottom:1px solid rgba(255,85,0,0.2);}
+.ba-card-header.after{background:rgba(34,197,94,0.1);border-bottom:1px solid rgba(34,197,94,0.2);}
+.ba-label{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px;}
+.ba-label.before{color:#FF5500;}
+.ba-label.after{color:var(--green);}
+.ba-icon{font-size:20px;}
+.ba-card-body{background:var(--navy);padding:28px;}
+.ba-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);}
+.ba-item:last-child{border-bottom:none;}
+.ba-item-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.ba-item-text{font-size:14px;color:var(--muted);line-height:1.6;}
+.ba-item-text strong{color:var(--light);}
+@media(max-width:768px){.ba-grid{grid-template-columns:1fr!important;}}
+
+/* TRANSFORMATION SECTIONS */
+.transform-section{padding:80px 0;}
+.transform-section:nth-child(even){background:var(--navy2);}
+.transform-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px;}
+.transform-grid.reverse{direction:rtl;}
+.transform-grid.reverse > *{direction:ltr;}
+.transform-img{border-radius:12px;overflow:hidden;background:var(--navy3);border:1px solid var(--border);padding:32px;}
+.screen-mock{background:var(--navy);border-radius:8px;padding:20px;border:1px solid var(--border);}
+.screen-bar{display:flex;gap:6px;margin-bottom:16px;}
+.screen-dot{width:10px;height:10px;border-radius:50%;}
+.screen-content-before{opacity:0.4;}
+.screen-content-after{opacity:1;}
+.highlight-box{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:20px 24px;margin-top:20px;}
+.highlight-box-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:10px;}
+.highlight-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.highlight-list li{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.highlight-list li::before{content:'✓';color:var(--gold);font-weight:900;flex-shrink:0;}
+@media(max-width:768px){.transform-grid{grid-template-columns:1fr!important;direction:ltr!important;gap:32px!important;}}
+
+/* PROCESS */
+.process-section{padding:80px 0;background:var(--navy);}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;position:relative;}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:0;}
+.process-step{text-align:center;position:relative;z-index:1;padding:0 12px;}
+.process-step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:18px;font-weight:900;color:#0A1628;margin:0 auto 16px;}
+.process-step-title{font-size:13px;font-weight:800;color:var(--light);margin-bottom:6px;}
+.process-step-desc{font-size:11px;color:var(--muted);line-height:1.5;}
+@media(max-width:768px){.process-steps{grid-template-columns:1fr 1fr!important;}.process-steps::before{display:none;}}
+
+/* QUOTE */
+.quote-section{padding:72px 0;background:linear-gradient(135deg,var(--steel),var(--navy3));border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.quote-inner{max-width:760px;margin:0 auto;text-align:center;}
+.quote-mark{font-size:80px;color:var(--gold);opacity:0.3;line-height:0.8;margin-bottom:24px;font-family:'Playfair Display',serif;}
+.quote-text{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);color:var(--light);line-height:1.6;font-style:italic;margin-bottom:28px;}
+.quote-author{font-size:14px;font-weight:800;color:var(--gold);}
+.quote-role{font-size:12px;color:var(--muted);margin-top:4px;}
+
+/* CTA */
+.cs-cta{padding:80px 0;background:var(--navy);text-align:center;}
+.h2{font-family:'Manrope',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;color:var(--light);line-height:1.15;letter-spacing:-0.5px;}
+.btn-primary{background:var(--gold);color:#0A1628;font-size:15px;font-weight:800;padding:14px 32px;border-radius:6px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--light);font-size:15px;font-weight:700;padding:14px 32px;border-radius:6px;border:1.5px solid rgba(255,255,255,0.2);transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* FOOTER */
+footer{background:#060E1C;padding:40px 0;border-top:1px solid var(--border);text-align:center;}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-logo">
+<div class="nav-logo-mark">A</div>
+<div class="nav-logo-name">AADEK</div>
+</div>
+<a class="nav-back" href="index.html">← <span>Back to AADEK Consulting</span></a>
+<a class="nav-cta" href="index.html#contact">Engage Us</a>
+</nav>
+<!-- HERO -->
+<section class="cs-hero">
+<div class="cs-hero-inner">
+<div class="cs-tag">
+<span style="width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;display:inline-block;"></span>
+      Case Study
+    </div>
+<span class="eyebrow">Digital Transformation</span>
+<h1 class="cs-title">From Placeholder to<br/><span>High-Powered Platform</span></h1>
+<p class="cs-sub">How AADEK Consulting transformed its digital presence from an outdated, placeholder website into a premium engineering consultancy platform — positioning Karen Myers-Rolle, PE as the authoritative voice in Caribbean mechanical engineering.</p>
+<div class="cs-meta">
+<div class="cs-meta-item">
+<div class="cs-meta-label">Client</div>
+<div class="cs-meta-value">AADEK Consulting Group</div>
+</div>
+<div class="cs-meta-item">
+<div class="cs-meta-label">Principal</div>
+<div class="cs-meta-value">Karen Myers-Rolle, PE</div>
+</div>
+<div class="cs-meta-item">
+<div class="cs-meta-label">Location</div>
+<div class="cs-meta-value">Nassau, Bahamas</div>
+</div>
+<div class="cs-meta-item">
+<div class="cs-meta-label">Delivered By</div>
+<div class="cs-meta-value">BluWav Growth</div>
+</div>
+<div class="cs-meta-item">
+<div class="cs-meta-label">Delivery Time</div>
+<div class="cs-meta-value">48 Hours</div>
+</div>
+<div class="cs-meta-item">
+<div class="cs-meta-label">Divisions Showcased</div>
+<div class="cs-meta-value">3 Income Streams</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RESULTS BAR -->
+<section class="results-bar">
+<div class="wrap">
+<div class="results-grid">
+<div class="reveal">
+<div class="result-num">48h</div>
+<div class="result-label">Delivery Time</div>
+</div>
+<div class="reveal">
+<div class="result-num">3</div>
+<div class="result-label">Income Streams Showcased</div>
+</div>
+<div class="reveal">
+<div class="result-num">100%</div>
+<div class="result-label">Content Rewritten</div>
+</div>
+<div class="reveal">
+<div class="result-num">0→1</div>
+<div class="result-label">Professional Online Presence</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BEFORE / AFTER -->
+<section class="ba-section">
+<div class="wrap">
+<div class="reveal" style="text-align:center;">
+<span class="eyebrow">The Problem</span>
+<h2 class="h2">A World-Class Engineer.<br/>An Invisible Online Presence.</h2>
+<p style="font-size:16px;color:var(--muted);max-width:580px;margin:16px auto 0;line-height:1.8;">Karen Myers-Rolle holds dual Professional Engineer licenses and leads three specialist engineering divisions. Her website told none of that story.</p>
+</div>
+<div class="ba-grid">
+<!-- BEFORE -->
+<div class="ba-card reveal">
+<div class="ba-card-header before">
+<span class="ba-icon">❌</span>
+<span class="ba-label before">Before — The Old Site</span>
+</div>
+<div class="ba-card-body">
+<div class="ba-item">
+<span class="ba-item-icon">📄</span>
+<div class="ba-item-text"><strong>Placeholder content everywhere</strong> — "You will find the latest information about our company here" repeated across every service page</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">🔇</span>
+<div class="ba-item-text"><strong>No mention of Karen Myers-Rolle</strong> — the dual-licensed PE leading the firm was completely invisible on the site</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">🏗️</span>
+<div class="ba-item-text"><strong>Three divisions buried</strong> — AADEK Consulting, Balanced as Designed, and Adrian's Safe Air &amp; Mechanical had no clear separation or positioning</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">📉</span>
+<div class="ba-item-text"><strong>No credibility signals</strong> — no PE credentials, no project portfolio, no client testimonials, no differentiators</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">📱</span>
+<div class="ba-item-text"><strong>No mobile optimisation</strong> — the site was not designed for the mobile-first Caribbean market</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">🔍</span>
+<div class="ba-item-text"><strong>Zero SEO</strong> — no meta descriptions, no structured content, no keyword targeting for Bahamas engineering searches</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">📞</span>
+<div class="ba-item-text"><strong>No clear call to action</strong> — visitors had no obvious path to engage AADEK for a project</div>
+</div>
+</div>
+</div>
+<!-- AFTER -->
+<div class="ba-card reveal">
+<div class="ba-card-header after">
+<span class="ba-icon">✅</span>
+<span class="ba-label after">After — The New Platform</span>
+</div>
+<div class="ba-card-body">
+<div class="ba-item">
+<span class="ba-item-icon">✍️</span>
+<div class="ba-item-text"><strong>Every word rewritten</strong> — authoritative, technical copy that reflects the depth of AADEK's expertise across all three divisions</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">👩‍💼</span>
+<div class="ba-item-text"><strong>Karen front and centre</strong> — dual PE credentials, professional bio, and credential badges establish her as the authority in Caribbean mechanical engineering</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">🏛️</span>
+<div class="ba-item-text"><strong>Three divisions clearly positioned</strong> — each with its own identity, service list, and value proposition — three income streams, one integrated group</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">📈</span>
+<div class="ba-item-text"><strong>Full credibility architecture</strong> — PE badges, 20+ years experience, 100+ projects, 3 divisions, Caribbean-wide positioning</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">📱</span>
+<div class="ba-item-text"><strong>Fully mobile responsive</strong> — optimised for every screen size with a dark, premium engineering aesthetic</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">🔍</span>
+<div class="ba-item-text"><strong>SEO-ready</strong> — meta tags, structured content, keyword-targeted copy for Bahamas and Caribbean engineering searches</div>
+</div>
+<div class="ba-item">
+<span class="ba-item-icon">📞</span>
+<div class="ba-item-text"><strong>Clear conversion path</strong> — "Engage Us" CTA, project enquiry form with service selector, 48-hour response commitment</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TRANSFORMATION 1: Brand & Positioning -->
+<section class="transform-section">
+<div class="wrap">
+<div class="reveal" style="text-align:center;">
+<span class="eyebrow">Transformation 01</span>
+<h2 class="h2">From Generic to<br/>Authoritative</h2>
+</div>
+<div class="transform-grid">
+<div class="reveal">
+<h3 style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--light);margin-bottom:16px;">The Challenge</h3>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">The old AADEK site had no brand voice, no positioning, and no personality. It looked like every other generic contractor website — indistinguishable from a one-person operation with no credentials.</p>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:24px;">For a firm led by a dual-licensed Professional Engineer with 20+ years of Caribbean project experience, this was a critical missed opportunity.</p>
+<div style="background:rgba(255,85,0,0.06);border:1px solid rgba(255,85,0,0.15);border-radius:10px;padding:20px;">
+<div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#FF5500;margin-bottom:10px;">Old Homepage Headline</div>
+<div style="font-size:16px;color:var(--muted);font-style:italic;">"You will find the latest information about our company here."</div>
+</div>
+</div>
+<div class="reveal">
+<h3 style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--light);margin-bottom:16px;">The Solution</h3>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">BluWav rebuilt AADEK's brand voice from the ground up — authoritative, technical, and precise. Every word was written to reflect the calibre of engineering Karen delivers.</p>
+<div style="background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:20px;margin-bottom:16px;">
+<div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:10px;">New Homepage Headline</div>
+<div style="font-size:18px;color:var(--light);font-weight:700;font-family:'Playfair Display',serif;font-style:italic;">"Engineering Excellence. Precisely Delivered."</div>
+</div>
+<div class="highlight-box">
+<div class="highlight-box-title">Brand Positioning Delivered</div>
+<ul class="highlight-list">
+<li>Dark, premium engineering aesthetic — navy, gold, steel</li>
+<li>Playfair Display headlines — gravitas and authority</li>
+<li>Blueprint grid texture — engineering identity</li>
+<li>Karen Myers-Rolle, PE positioned as the authority</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TRANSFORMATION 2: Three Income Streams -->
+<section class="transform-section">
+<div class="wrap">
+<div class="reveal" style="text-align:center;">
+<span class="eyebrow">Transformation 02</span>
+<h2 class="h2">Three Divisions.<br/>Three Revenue Streams. One Platform.</h2>
+</div>
+<div class="transform-grid reverse">
+<div class="reveal">
+<h3 style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--light);margin-bottom:16px;">The Challenge</h3>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">AADEK operates three distinct businesses — AADEK Consulting, Balanced as Designed, and Adrian's Safe Air &amp; Mechanical. The old site buried all three under a single confusing navigation with no clear differentiation.</p>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;">Potential clients couldn't tell what AADEK actually did — let alone which division to engage for their specific need.</p>
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
+<div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,85,0,0.06);border-radius:8px;border:1px solid rgba(255,85,0,0.12);">
+<span style="color:#FF5500;font-size:16px;">✗</span>
+<span style="font-size:13px;color:var(--muted);">No division separation or individual positioning</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,85,0,0.06);border-radius:8px;border:1px solid rgba(255,85,0,0.12);">
+<span style="color:#FF5500;font-size:16px;">✗</span>
+<span style="font-size:13px;color:var(--muted);">Services mixed together with no clear hierarchy</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,85,0,0.06);border-radius:8px;border:1px solid rgba(255,85,0,0.12);">
+<span style="color:#FF5500;font-size:16px;">✗</span>
+<span style="font-size:13px;color:var(--muted);">Three revenue streams invisible to potential clients</span>
+</div>
+</div>
+</div>
+<div class="reveal">
+<h3 style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--light);margin-bottom:16px;">The Solution</h3>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">Each division was given its own identity, colour accent, service list, and value proposition — presented as a unified group with three specialist arms.</p>
+<div style="display:flex;flex-direction:column;gap:12px;">
+<div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:16px 20px;">
+<div style="font-size:13px;font-weight:800;color:var(--gold);margin-bottom:4px;">📐 AADEK Consulting</div>
+<div style="font-size:12px;color:var(--muted);">Mechanical Engineering Consultancy — 9 services, gold accent</div>
+</div>
+<div style="background:rgba(79,195,212,0.08);border:1px solid rgba(79,195,212,0.2);border-radius:10px;padding:16px 20px;">
+<div style="font-size:13px;font-weight:800;color:var(--cyan);margin-bottom:4px;">⚖️ Balanced as Designed</div>
+<div style="font-size:12px;color:var(--muted);">Testing, Adjusting &amp; Balancing — 8 services, cyan accent</div>
+</div>
+<div style="background:rgba(74,127,165,0.08);border:1px solid rgba(74,127,165,0.2);border-radius:10px;padding:16px 20px;">
+<div style="font-size:13px;font-weight:800;color:#4A7FA5;margin-bottom:4px;">🔧 Adrian's Safe Air &amp; Mechanical</div>
+<div style="font-size:12px;color:var(--muted);">Installation &amp; Maintenance — 8 services, steel accent</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TRANSFORMATION 3: Karen's Credentials -->
+<section class="transform-section">
+<div class="wrap">
+<div class="reveal" style="text-align:center;">
+<span class="eyebrow">Transformation 03</span>
+<h2 class="h2">Making the Engineer<br/>the Authority</h2>
+</div>
+<div class="transform-grid">
+<div class="reveal">
+<h3 style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--light);margin-bottom:16px;">The Challenge</h3>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">Karen Myers-Rolle holds dual Professional Engineer licenses — one of the most significant credentials in the engineering profession. The old site made no mention of her name, her qualifications, or her experience.</p>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;">In a trust-driven industry like engineering consultancy, the principal's credentials are the single most powerful conversion tool. They were completely absent.</p>
+</div>
+<div class="reveal">
+<h3 style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:var(--light);margin-bottom:16px;">The Solution</h3>
+<p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">Karen was positioned as the centrepiece of the site — her dual PE licensure, Caribbean expertise, and 20+ years of experience featured prominently in the hero, about section, and footer.</p>
+<div class="highlight-box">
+<div class="highlight-box-title">Credibility Architecture Built</div>
+<ul class="highlight-list">
+<li>Dual PE badge in hero card and footer</li>
+<li>Dedicated About section with professional bio</li>
+<li>4 credential badges: PE, Mechanical Specialist, Caribbean Experience, Founder</li>
+<li>Stats: 20+ years, 3 divisions, 100+ projects, 2x PE</li>
+<li>"Karen Myers-Rolle, PE" in page title and meta tags</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROCESS -->
+<section class="process-section">
+<div class="wrap">
+<div class="reveal" style="text-align:center;margin-bottom:0;">
+<span class="eyebrow">How We Did It</span>
+<h2 class="h2">Delivered in 48 Hours</h2>
+<p style="font-size:16px;color:var(--muted);max-width:480px;margin:16px auto 0;line-height:1.8;">From brief to live — the BluWav process that transformed AADEK's digital presence in under two days.</p>
+</div>
+<div class="process-steps reveal">
+<div class="process-step">
+<div class="process-step-num">1</div>
+<div class="process-step-title">Discovery</div>
+<p class="process-step-desc">Audited the existing site, identified all three divisions, mapped Karen's credentials and services</p>
+</div>
+<div class="process-step">
+<div class="process-step-num">2</div>
+<div class="process-step-title">Strategy</div>
+<p class="process-step-desc">Defined brand positioning, information architecture, and conversion goals for each division</p>
+</div>
+<div class="process-step">
+<div class="process-step-num">3</div>
+<div class="process-step-title">Design</div>
+<p class="process-step-desc">Built the dark, premium engineering aesthetic — navy, gold, blueprint grid, Playfair Display</p>
+</div>
+<div class="process-step">
+<div class="process-step-num">4</div>
+<div class="process-step-title">Content</div>
+<p class="process-step-desc">Rewrote every word — authoritative copy for 9 services, 3 divisions, about section, and SEO</p>
+</div>
+<div class="process-step">
+<div class="process-step-num">5</div>
+<div class="process-step-title">Launch</div>
+<p class="process-step-desc">Deployed to GitHub Pages, live URL delivered, ready for custom domain connection</p>
+</div>
+</div>
+</div>
+</section>
+<!-- QUOTE -->
+<section class="quote-section">
+<div class="wrap">
+<div class="quote-inner reveal">
+<div class="quote-mark">"</div>
+<p class="quote-text">AADEK had the credentials, the experience, and the track record. What was missing was a digital presence that reflected the calibre of engineering we deliver. BluWav built that — in 48 hours.</p>
+<div class="quote-author">Karen Myers-Rolle, PE</div>
+<div class="quote-role">Principal Engineer · AADEK Consulting Group · Nassau, Bahamas</div>
+</div>
+</div>
+</section>
+<!-- WHAT WAS DELIVERED -->
+<section style="padding:80px 0;background:var(--navy2);">
+<div class="wrap">
+<div class="reveal" style="text-align:center;margin-bottom:48px;">
+<span class="eyebrow">Deliverables</span>
+<h2 class="h2">What BluWav Delivered</h2>
+</div>
+<div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+<div style="background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:28px;">
+<div style="font-size:28px;margin-bottom:14px;">🌐</div>
+<div style="font-size:16px;font-weight:800;color:var(--light);margin-bottom:8px;">Full Website Rebuild</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.7;">Single-page high-performance site with 9 sections — hero, divisions, services, about, projects, why AADEK, CTA, contact, footer</p>
+</div>
+<div style="background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:28px;">
+<div style="font-size:28px;margin-bottom:14px;">✍️</div>
+<div style="font-size:16px;font-weight:800;color:var(--light);margin-bottom:8px;">Complete Copywriting</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.7;">Every word rewritten — hero, 9 service descriptions, 3 division profiles, Karen's bio, project descriptions, and all CTAs</p>
+</div>
+<div style="background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:28px;">
+<div style="font-size:28px;margin-bottom:14px;">🎨</div>
+<div style="font-size:16px;font-weight:800;color:var(--light);margin-bottom:8px;">Premium Design System</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.7;">Dark navy/gold engineering aesthetic, blueprint grid texture, Playfair Display headlines, scroll animations, hover effects</p>
+</div>
+<div style="background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:28px;">
+<div style="font-size:28px;margin-bottom:14px;">📱</div>
+<div style="font-size:16px;font-weight:800;color:var(--light);margin-bottom:8px;">Mobile Responsive</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.7;">Fully optimised for all screen sizes — desktop, tablet, and mobile — with touch-friendly navigation and readable typography</p>
+</div>
+<div style="background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:28px;">
+<div style="font-size:28px;margin-bottom:14px;">🔍</div>
+<div style="font-size:16px;font-weight:800;color:var(--light);margin-bottom:8px;">SEO Foundation</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.7;">Meta title, description, Open Graph tags, structured headings, keyword-targeted copy for Bahamas mechanical engineering searches</p>
+</div>
+<div style="background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:28px;">
+<div style="font-size:28px;margin-bottom:14px;">🚀</div>
+<div style="font-size:16px;font-weight:800;color:var(--light);margin-bottom:8px;">Live Deployment</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.7;">Deployed to GitHub Pages with live URL — ready for custom domain connection to aadek.com when domain access is available</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cs-cta">
+<div class="wrap">
+<span class="eyebrow" style="display:block;text-align:center;">Ready for Your Transformation?</span>
+<h2 class="h2" style="text-align:center;margin-bottom:16px;">Your Business Deserves<br/>a Digital Presence That Matches Your Expertise</h2>
+<p style="font-size:16px;color:var(--muted);max-width:480px;margin:0 auto 36px;text-align:center;line-height:1.8;">BluWav Growth delivers professional websites, Google visibility, and CRM systems for Caribbean businesses — in 48 hours.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+<a class="btn-primary" href="https://bluwavgrowth.com" target="_blank">Visit BluWav Growth →</a>
+<a class="btn-outline" href="https://forms.gle/EcVVcffVTqLZpHURA" target="_blank">Get Your Free Health Check</a>
+</div>
+<p style="font-size:12px;color:var(--slate);text-align:center;margin-top:20px;">Free · No commitment · Results in 48 hours</p>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="wrap">
+<p style="font-size:13px;color:var(--slate);">© 2026 AADEK Consulting Group · Nassau, Bahamas · Karen Myers-Rolle, PE · <a href="https://bluwavgrowth.com" style="color:var(--gold);">Website by BluWav Growth</a></p>
+</div>
+</footer>
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+</script>
+</body>
+</html>
